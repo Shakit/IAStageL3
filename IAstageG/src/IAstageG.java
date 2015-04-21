@@ -67,21 +67,21 @@ public class IAstageG implements AIInterface
 							- fData.getOpponentCharacter(myPlayerNumber).getX());
 				if (distance > 50)
 					{
-					inputKey.A = false;
-					inputKey.B = false;
-					inputKey.C = false;					
-					
-															
-					if(fData.getMyCharacter(myPlayerNumber).isFront())
-					{
-						inputKey.R = true;
-						inputKey.L = false;
-					}
-					else
-					{ 
-						inputKey.L = true;
-						inputKey.R = false;
-					}
+						inputKey.A = false;
+						inputKey.B = false;
+						inputKey.C = false;					
+						
+																
+						if(fData.getMyCharacter(myPlayerNumber).isFront())
+						{
+							inputKey.R = true;
+							inputKey.L = false;
+						}
+						else
+						{ 
+							inputKey.L = true;
+							inputKey.R = false;
+						}
 				}
 				else
 				{
