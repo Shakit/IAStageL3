@@ -65,7 +65,16 @@ public class IAstageG implements AIInterface
 			{
 				int distance = Math.abs(fData.getMyCharacter(myPlayerNumber).getX() 
 							- fData.getOpponentCharacter(myPlayerNumber).getX());
-				if (distance > 50)
+				
+				inputKey.A = false;
+				inputKey.B = false;
+				inputKey.C = false;
+				inputKey.U = false;
+				inputKey.D = false;
+				inputKey.R = false;
+				inputKey.L = false;
+				
+				if (distance > 40)
 					{
 						inputKey.A = false;
 						inputKey.B = false;
@@ -83,7 +92,7 @@ public class IAstageG implements AIInterface
 							inputKey.R = false;
 						}
 				}
-				else
+				else 
 				{
 					if(fData.getRemainingTime()%2 != 0)
 					{

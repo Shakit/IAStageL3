@@ -136,6 +136,7 @@ public class IAstageState implements AIInterface {
 
 	@Override
 	public void processing() {
+		currentState.printState();
 		currentState.doYourStuff();
 	}
 

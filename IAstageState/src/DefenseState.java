@@ -21,13 +21,7 @@ public class DefenseState extends State {
 		boolean myPlayerNumber = client_.getPlayerNumber();
 		
 		if(!fData.getEmptyFlag() && fData.getRemainingTime() > 0) 
-		{
-			inputKey.U = false;
-			inputKey.D = false;
-			inputKey.A = false;
-			inputKey.B = false;
-			inputKey.C = false;
-			
+		{			
 			if(fData.getMyCharacter(myPlayerNumber).isFront())
 			{
 				inputKey.R = false;
@@ -38,11 +32,17 @@ public class DefenseState extends State {
 				inputKey.L = false;
 				inputKey.R = true;
 			}
-			
-			client_.setInputKey(inputKey);
 		}
+		
+		client_.setInputKey(inputKey);
+	
 		//The probability has not been already chosen.
 		nextState(25, 25, 25);
+	}
+	
+	public void printState()
+	{
+		System.out.println("DEF");
 	}
 
 }

@@ -23,12 +23,8 @@ public class MovingBState extends State {
 		
 		if(!fData.getEmptyFlag() && fData.getRemainingTime() > 0) 
 		{		
-			inputKey.U = true;
-			inputKey.D = false;
-			inputKey.A = false;
-			inputKey.B = false;
-			inputKey.C = false;
-			
+			inputKey.U = (rand.nextInt(10) < 7)?true : false;
+						
 			if(fData.getMyCharacter(myPlayerNumber).isFront())
 			{
 				inputKey.R = false;
@@ -38,12 +34,17 @@ public class MovingBState extends State {
 			{ 
 				inputKey.L = false;
 				inputKey.R = true;
-			}
-	
-			client_.setInputKey(inputKey);
+			}		
 		}
+		
+		client_.setInputKey(inputKey);
 		
 		//The probability has not been already chosen.
 		nextState(25, 25, 25);	
+	}
+	
+	public void printState()
+	{
+		System.out.println("MB");
 	}
 }

@@ -59,4 +59,9 @@ public abstract class State {
 			client_.setCurrentState(client_.getMovingBState());
 		}
 	}
+	
+	public void printState()
+	{
+		System.out.println("zbra !");
+	}
 }

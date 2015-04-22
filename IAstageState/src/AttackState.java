@@ -1,3 +1,4 @@
+import structs.FrameData;
 import structs.Key;
 
 public class AttackState extends State {
@@ -16,20 +17,26 @@ public class AttackState extends State {
 	@Override
 	public void doYourStuff() {
 		Key inputKey = new Key();
+		FrameData fData = client_.getFData();
 		
-		inputKey.U = false;
-		inputKey.D = false;
-		inputKey.R = false;
-		inputKey.L = false;
-		
-		
-		inputKey.A = (rand.nextInt(10) > 4) ? true : false;
-		inputKey.B = (rand.nextInt(10) > 4) ? true : false;
-		inputKey.C = (rand.nextInt(10) > 4) ? true : false;
+		if(!fData.getEmptyFlag() && fData.getRemainingTime() > 0) 
+		{
+			if (fData.getRemainingTime() % 3 == 0) 
+			{		
+				inputKey.A = (rand.nextInt(10) > 4) ? true : false;
+				inputKey.B = (rand.nextInt(10) > 4) ? true : false;
+				inputKey.C = (rand.nextInt(10) > 4) ? true : false;
+			}
+		}
 		
 		client_.setInputKey(inputKey);
 		
 		//The probability has not been already chosen.
 		nextState(25, 25, 25);	
+	}
+	
+	public void printState()
+	{
+		System.out.println("ATK");
 	}
 }

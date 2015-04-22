@@ -23,16 +23,12 @@ public class MovingFState extends State {
 		
 		if(!fData.getEmptyFlag() && fData.getRemainingTime() > 0) 
 		{
-			inputKey.U = (rand.nextInt(10)>4)?true : false;
-			inputKey.D = false;
-			inputKey.A = false;
-			inputKey.B = false;
-			inputKey.C = false;
-			
+			//inputKey.U = (rand.nextInt(10)>7)?true : false;
+						
 			int distance = Math.abs(fData.getMyCharacter(myPlayerNumber).getX() 
 					- fData.getOpponentCharacter(myPlayerNumber).getX());
 			
-			if (distance > 30)
+			if (true)//distance > 0 || inputKey.U)
 			{
 				if(fData.getMyCharacter(myPlayerNumber).isFront())
 				{
@@ -45,12 +41,17 @@ public class MovingFState extends State {
 					inputKey.R = false;
 				}
 			}
-			
-			client_.setInputKey(inputKey);
 		}
+		
+		client_.setInputKey(inputKey);
 		
 		//The probability has not been already chosen.
 		nextState(25, 25, 25);	
 	}
 
+	
+	public void printState()
+	{
+		System.out.println("MF");
+	}
 }
