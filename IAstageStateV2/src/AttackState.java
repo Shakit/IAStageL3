@@ -1,8 +1,8 @@
 
 public abstract class AttackState extends State {
 
-	public AttackState(IAstageStateV2 client) {
-		super(client);
+	public AttackState(IAstageStateV2 client, String file) {
+		super(client, file);
 	}
 
 	public void doYourStuff() {

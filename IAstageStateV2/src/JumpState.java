@@ -1,14 +1,14 @@
-import java.util.Vector;
+//import java.util.Vector;
 
 import structs.Key;
 
 
 public class JumpState extends MovingState {
 
-	public JumpState(IAstageStateV2 client) {
-		super(client);
-		probabilities = new Vector<Integer>();
-		for(int i = 0; i < 7; ++i) probabilities.add(15);
+	public JumpState(IAstageStateV2 client, String file) {
+		super(client, file);
+		//probabilities = new Vector<Integer>();
+		//for(int i = 0; i < 7; ++i) probabilities.add(15);
 	}
 
 	public void doYourStuff() {
@@ -20,7 +20,6 @@ public class JumpState extends MovingState {
 	}
 	
 	public void printState() {
-		// TODO Auto-generated method stub
-		super.printState();
+		System.out.println("Jump Moving State");
 	}
 }

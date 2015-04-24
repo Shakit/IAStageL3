@@ -110,6 +110,7 @@ public class IAstageStateV2 implements AIInterface
 	{
 		inputKeyA = input;
 	}
+	
 	public void setInputKeyM(Key input)
 	{
 		inputKeyM = input;
@@ -142,18 +143,18 @@ public class IAstageStateV2 implements AIInterface
 		fData = new FrameData();
 		myPlayerNumber = arg1;
 		
-		punchState = new PunchState(this);
-		kickState = new KickState(this);
-		mysteryState = new MysteryState(this);
-		nothingState = new NothingState(this);
+		punchState = new PunchState(this, "data/aiData/IAstageStateV2/punch");
+		kickState = new KickState(this, "data/aiData/IAstageStateV2/kick");
+		mysteryState = new MysteryState(this, "data/aiData/IAstageStateV2/mystery");
+		nothingState = new NothingState(this, "data/aiData/IAstageStateV2/nothing");
 		
-		forwardState = new ForwardState(this);
-		backwardState = new BackwardState(this);
-		crouchState = new CrouchState(this);
-		jumpState = new JumpState(this);
-		jumpForwardState = new JumpForwardState(this);
-		jumpBackwardState = new JumpBackwardState(this);
-		stayState = new StayState(this);
+		forwardState = new ForwardState(this, "data/aiData/IAstageStateV2/forward");
+		backwardState = new BackwardState(this, "data/aiData/IAstageStateV2/backward");
+		crouchState = new CrouchState(this, "data/aiData/IAstageStateV2/crouch");
+		jumpState = new JumpState(this, "data/aiData/IAstageStateV2/jump");
+		jumpForwardState = new JumpForwardState(this, "data/aiData/IAstageStateV2/jumpForward");
+		jumpBackwardState = new JumpBackwardState(this, "data/aiData/IAstageStateV2/jumpBackward");
+		stayState = new StayState(this, "data/aiData/IAstageStateV2/stay");
 				
 		currentAttackState = nothingState;
 		currentMovingState = stayState;

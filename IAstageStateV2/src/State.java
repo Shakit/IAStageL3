@@ -1,4 +1,6 @@
+import java.io.File;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Vector;
 
 import structs.Key;
@@ -8,15 +10,34 @@ public abstract class State
 	/*=============================================*/
 	/*=============== MEMBERS ===============*/
 	protected IAstageStateV2 client_;
+	protected String probaFile;
 	protected Vector<Integer> probabilities;
 	protected Random rand;
 	
 	/*=============================================*/
 	/*============ CONSTRUCTORS =============*/
-	public State(IAstageStateV2 client)
+	public State(IAstageStateV2 client, String file)
 	{
 		client_ = client;
+		probabilities = new Vector<Integer>();
+		probaFile = file; 
 		rand = new Random();
+		try
+		{
+			Scanner sc = new Scanner(new File(probaFile));
+			while(sc.hasNextLine())
+			{
+				Integer n = new Integer(sc.nextLine());
+				probabilities.add(n);
+				System.out.println(n);
+			}
+			sc.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("fichier introuvable ! ");
+		}
+		
 	}
 	
 	/*=============================================*/

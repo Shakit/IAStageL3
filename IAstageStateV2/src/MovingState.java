@@ -1,8 +1,8 @@
 
 public abstract class MovingState extends State {
 
-	public MovingState(IAstageStateV2 client) {
-		super(client);
+	public MovingState(IAstageStateV2 client, String file) {
+		super(client,file);
 		// TODO Auto-generated constructor stub
 	}
 	

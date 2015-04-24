@@ -1,4 +1,4 @@
-import java.util.Vector;
+//import java.util.Vector;
 
 import structs.FrameData;
 import structs.Key;
@@ -6,10 +6,10 @@ import structs.Key;
 
 public class ForwardState extends MovingState {
 
-	public ForwardState(IAstageStateV2 client) {
-		super(client);
-		probabilities = new Vector<Integer>();
-		for(int i = 0; i < 7; ++i) probabilities.add(15);
+	public ForwardState(IAstageStateV2 client, String file) {
+		super(client, file);
+		//probabilities = new Vector<Integer>();
+		//for(int i = 0; i < 7; ++i) probabilities.add(15);
 	}
 	public void doYourStuff() {
 		Key inputKey = new Key();
