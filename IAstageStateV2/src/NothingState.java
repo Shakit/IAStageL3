@@ -20,6 +20,6 @@ public class NothingState extends AttackState {
 	}
 	
 	public void printState() {
-		System.out.println("Nothing Attack State");		
+		System.out.print("Nothing Attack State");		
 	}
 }

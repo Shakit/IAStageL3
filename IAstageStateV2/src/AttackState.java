@@ -16,7 +16,7 @@ public abstract class AttackState extends State {
 		int probaTot = 100;
 		boolean exit = false;
 		
-		for(int i : probabilities)
+		for(double i : probabilities)
 		{
 			if (choice >= probaTot - i)
 			{

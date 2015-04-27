@@ -19,6 +19,6 @@ public class StayState extends MovingState {
 	}
 	
 	public void printState() {
-		System.out.println("Stay Moving State");		
+		System.out.print("Stay Moving State");		
 	}
 }

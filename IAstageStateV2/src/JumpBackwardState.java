@@ -36,6 +36,6 @@ public class JumpBackwardState extends MovingState {
 		nextState();
 	}
 	public void printState() {
-		System.out.println("Jump Backward Moving State");
+		System.out.print("Jump Backward Moving State");
 	}
 }

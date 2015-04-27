@@ -13,17 +13,22 @@ public abstract class State
 	/*=============== MEMBERS ===============*/
 	protected IAstageStateV2 client_;
 	protected String probaFile;
-	protected Vector<Integer> probabilities;
+	protected Vector<Double> probabilities;
 	protected Random rand;
-	
+	protected int nbFrameInit;
+	protected int nbFrameCurr;
+		
 	/*=============================================*/
 	/*============ CONSTRUCTORS =============*/
 	public State(IAstageStateV2 client, String file)
 	{
 		client_ = client;
-		probabilities = new Vector<Integer>();
+		probabilities = new Vector<Double>();
 		probaFile = file; 
 		rand = new Random();
+		
+		nbFrameCurr = 60; 
+		nbFrameInit = 60;
 		
 		Scanner sc = null;
 		try
@@ -31,7 +36,7 @@ public abstract class State
 			sc = new Scanner(new File(probaFile));
 			while(sc.hasNextLine())
 			{
-				Integer n = new Integer(sc.nextLine());
+				Double n = new Double(sc.nextLine());
 				probabilities.add(n);
 				System.out.println(n);
 			}
@@ -93,7 +98,7 @@ public abstract class State
 	public void rewriteProbaFile()
 	{
 		String s = "";
-		for(Integer i : probabilities)
+		for(double i : probabilities)
 		{
 			s += i + "\n";
 		}
@@ -101,16 +106,32 @@ public abstract class State
 		file = new File(probaFile);
 		if (file.delete())
 		{
-			try {
-				
-		        FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			try 
+			{
+				FileWriter fw = new FileWriter(file.getAbsoluteFile());
 		        BufferedWriter bw = new BufferedWriter(fw);
 		        bw.write(s);
 		        bw.close();
 			}
 			catch(Exception e)
 			{
-				System.out.println("erreur d'ecriture");
+				System.out.print("erreur d'ecriture");
+			}
+		}
+	}
+	
+	public void setProba(int place, double plus)
+	{
+		double otherPlus = -(plus/(probabilities.size()-1));
+		for(int i = 0; i < probabilities.size(); ++i)
+		{
+			if(i == place)
+			{
+				probabilities.set(i, probabilities.get(i) + plus);
+			}
+			else
+			{
+				probabilities.set(i, probabilities.get(i) + otherPlus);
 			}
 		}
 	}

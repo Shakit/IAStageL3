@@ -17,7 +17,7 @@ public abstract class MovingState extends State {
 		int probaTot = 100;
 		boolean exit = false;
 		
-		for(int i : probabilities)
+		for(double i : probabilities)
 		{
 			if (choice >= probaTot - i)
 			{
@@ -61,7 +61,7 @@ public abstract class MovingState extends State {
 	
 	public void printState() {
 		// TODO Auto-generated method stub
-		System.out.println("MOVING STATE");
+		System.out.print("MOVING STATE");
 	}
 
 }

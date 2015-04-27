@@ -32,11 +32,15 @@ public class BackwardState extends MovingState {
 		}
 		
 		client_.setInputKeyM(inputKey);
-		nextState();
+		if (--nbFrameCurr == 0)
+		{
+			nextState(); 
+			nbFrameCurr = nbFrameInit;
+		}
 	}
 	
 	public void printState() {
 		// TODO Auto-generated method stub
-		System.out.println("Backward Moving State");
+		System.out.print("Backward Moving State");
 	}
 }

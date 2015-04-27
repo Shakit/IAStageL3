@@ -14,13 +14,13 @@ public class PunchState extends AttackState {
 	public void doYourStuff() {
 		Key inputKey = new Key();
 		
-		inputKey.A = true;
+		if(client_.getDistance() <= 50) inputKey.A = true;
 		
 		client_.setInputKeyA(inputKey);
 		nextState();
 	}
 	
 	public void printState() {
-		System.out.println("Punch Attack State");		
+		System.out.print("Punch Attack State");		
 	}
 }

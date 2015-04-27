@@ -20,6 +20,6 @@ public class JumpState extends MovingState {
 	}
 	
 	public void printState() {
-		System.out.println("Jump Moving State");
+		System.out.print("Jump Moving State");
 	}
 }

@@ -11,7 +11,8 @@ public class IAstageStateV2 implements AIInterface
 	private Key inputKeyA;
 	private FrameData fData;
 	private boolean myPlayerNumber;
-	
+	private int cpt;
+		
 	private AttackState currentAttackState;
 	private MovingState currentMovingState;
 	
@@ -48,7 +49,16 @@ public class IAstageStateV2 implements AIInterface
 	{
 		return myPlayerNumber;
 	}
-				
+		
+	public int getDistance() {
+		int distance = 0;
+		
+		if(!fData.getEmptyFlag() && fData.getRemainingTime()>0)
+			distance = Math.abs(fData.getMyCharacter(myPlayerNumber).getX() - fData.getOpponentCharacter(myPlayerNumber).getX());
+		
+		return distance;
+	}
+	
 	//attack states
 	public AttackState getPunchState() {
 		return punchState;
@@ -115,7 +125,7 @@ public class IAstageStateV2 implements AIInterface
 	{
 		inputKeyM = input;
 	}
-	
+
 	/*=============================================*/
 	/*============ OTHER METHODS ============*/
 
@@ -153,6 +163,7 @@ public class IAstageStateV2 implements AIInterface
 		inputKeyM = new Key();
 		fData = new FrameData();
 		myPlayerNumber = arg1;
+		cpt = 0;
 		
 		punchState = new PunchState(this, "data/aiData/IAstageStateV2/punch");
 		kickState = new KickState(this, "data/aiData/IAstageStateV2/kick");
@@ -188,10 +199,13 @@ public class IAstageStateV2 implements AIInterface
 
 	public void processing() 
 	{
+		System.out.print(++cpt);
+		System.out.print(" : ");
 		currentAttackState.printState();
 		currentAttackState.doYourStuff();
+		System.out.print(" - ");
 		currentMovingState.printState();
 		currentMovingState.doYourStuff();
-		System.out.println("");
+		System.out.println("\n");
 	}
 }

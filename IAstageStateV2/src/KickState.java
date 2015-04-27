@@ -14,13 +14,13 @@ public class KickState extends AttackState {
 	public void doYourStuff() {
 		Key inputKey = new Key();
 		
-		inputKey.B = true;
+		if(client_.getDistance() <= 50) inputKey.B = true;
 		
 		client_.setInputKeyA(inputKey);
 		nextState();
 	}
 	
 	public void printState() {
-		System.out.println("Kick Attack State");		
+		System.out.print("Kick Attack State");		
 	}
 }

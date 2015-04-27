@@ -15,13 +15,13 @@ public class MysteryState extends AttackState {
 	public void doYourStuff() {
 		Key inputKey = new Key();
 		
-		inputKey.C = true;
+		if(client_.getDistance() <= 50) inputKey.C = true;
 		
 		client_.setInputKeyA(inputKey);
 		nextState();
 	}
 	
 	public void printState() {
-		System.out.println("Mystery Attack State");		
+		System.out.print("Mystery Attack State");		
 	}
 }

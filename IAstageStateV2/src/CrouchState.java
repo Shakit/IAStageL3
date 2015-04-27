@@ -20,6 +20,6 @@ public class CrouchState extends MovingState {
 		nextState();
 	}
 	public void printState() {
-		System.out.println("Crouch Moving State");		
+		System.out.print("Crouch Moving State");		
 	}
 }
