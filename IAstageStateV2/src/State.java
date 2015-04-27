@@ -1,4 +1,6 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
@@ -22,20 +24,28 @@ public abstract class State
 		probabilities = new Vector<Integer>();
 		probaFile = file; 
 		rand = new Random();
+		
+		Scanner sc = null;
 		try
 		{
-			Scanner sc = new Scanner(new File(probaFile));
+			sc = new Scanner(new File(probaFile));
 			while(sc.hasNextLine())
 			{
 				Integer n = new Integer(sc.nextLine());
 				probabilities.add(n);
 				System.out.println(n);
 			}
-			sc.close();
 		}
 		catch(Exception e)
 		{
 			System.out.println("fichier introuvable ! ");
+		}
+		finally
+		{
+			if (sc != null)
+			{
+				sc.close();
+			}
 		}
 		
 	}
@@ -78,5 +88,30 @@ public abstract class State
 	public void printState()
 	{
 		System.out.println("zbra !");
+	}
+	
+	public void rewriteProbaFile()
+	{
+		String s = "";
+		for(Integer i : probabilities)
+		{
+			s += i + "\n";
+		}
+		File file = null;
+		file = new File(probaFile);
+		if (file.delete())
+		{
+			try {
+				
+		        FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		        BufferedWriter bw = new BufferedWriter(fw);
+		        bw.write(s);
+		        bw.close();
+			}
+			catch(Exception e)
+			{
+				System.out.println("erreur d'ecriture");
+			}
+		}
 	}
 }

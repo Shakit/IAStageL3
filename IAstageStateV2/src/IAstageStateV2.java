@@ -121,7 +121,18 @@ public class IAstageStateV2 implements AIInterface
 
 	public void close() 
 	{
-		// TODO Auto-generated method stub
+		punchState.rewriteProbaFile();
+		kickState.rewriteProbaFile();
+		mysteryState.rewriteProbaFile();
+		nothingState.rewriteProbaFile();
+		
+		forwardState.rewriteProbaFile();
+		backwardState.rewriteProbaFile();
+		jumpState.rewriteProbaFile();
+		jumpForwardState.rewriteProbaFile();
+		jumpBackwardState.rewriteProbaFile();
+		crouchState.rewriteProbaFile();
+		stayState.rewriteProbaFile();
 	}
 
 	public String getCharacter() 

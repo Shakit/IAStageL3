@@ -59,7 +59,7 @@ public abstract class MovingState extends State {
 		}
 	}
 	
-public void printState() {
+	public void printState() {
 		// TODO Auto-generated method stub
 		System.out.println("MOVING STATE");
 	}
