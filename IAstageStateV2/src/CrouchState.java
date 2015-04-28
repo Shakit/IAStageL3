@@ -17,7 +17,11 @@ public class CrouchState extends MovingState {
 		inputKey.D = true;
 		
 		client_.setInputKeyM(inputKey);
-		nextState();
+		if (--nbFrameCurr == 0)
+		{
+			nextState(); 
+			nbFrameCurr = nbFrameInit;
+		}
 	}
 	public void printState() {
 		System.out.print("Crouch Moving State");		
