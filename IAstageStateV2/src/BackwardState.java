@@ -8,8 +8,6 @@ public class BackwardState extends MovingState {
 
 	public BackwardState(IAstageStateV2 client, String file) {
 		super(client, file);
-		//probabilities = new Vector<Integer>();
-		//for(int i = 0; i < 7; ++i) probabilities.add(15);
 	}
 	
 	public void doYourStuff() {
@@ -40,7 +38,6 @@ public class BackwardState extends MovingState {
 	}
 	
 	public void printState() {
-		// TODO Auto-generated method stub
 		System.out.print("Backward Moving State");
 	}
 }

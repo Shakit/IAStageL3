@@ -7,8 +7,6 @@ public class JumpState extends MovingState {
 
 	public JumpState(IAstageStateV2 client, String file) {
 		super(client, file);
-		//probabilities = new Vector<Integer>();
-		//for(int i = 0; i < 7; ++i) probabilities.add(15);
 	}
 
 	public void doYourStuff() {

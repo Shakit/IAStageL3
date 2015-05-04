@@ -6,7 +6,6 @@ public abstract class AttackState extends State {
 	}
 
 	public void doYourStuff() {
-		// TODO Auto-generated method stub
 		super.doYourStuff();
 	}
 

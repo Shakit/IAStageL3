@@ -3,11 +3,9 @@ public abstract class MovingState extends State {
 
 	public MovingState(IAstageStateV2 client, String file) {
 		super(client,file);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void doYourStuff() {
-		// TODO Auto-generated method stub
 		super.doYourStuff();
 	}
 	
@@ -60,7 +58,6 @@ public abstract class MovingState extends State {
 	}
 	
 	public void printState() {
-		// TODO Auto-generated method stub
 		System.out.print("MOVING STATE");
 	}
 

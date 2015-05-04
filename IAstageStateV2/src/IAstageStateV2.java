@@ -32,19 +32,11 @@ public class IAstageStateV2 implements AIInterface
 	
 	/*=============================================*/
 	/*=============== GETTERS ===============*/
-	/**
-	* Getter for current frame data.
-	* @return fData, a FrameData
-	*/
 	public FrameData getFData()
 	{
 		return fData;
 	}
 	
-	/**
-	* Getter for the player number, which is actually a boolean.
-	* @return a boolean as the player number
-	*/
 	public boolean getPlayerNumber()
 	{
 		return myPlayerNumber;
@@ -147,13 +139,11 @@ public class IAstageStateV2 implements AIInterface
 
 	public String getCharacter() 
 	{
-	// TODO Auto-generated method stub
 		return CHARACTER_ZEN;
 	}
 
 	public void getInformation(FrameData arg0)
 	{
-		// TODO Auto-generated method stub
 		fData = arg0;
 	}
 

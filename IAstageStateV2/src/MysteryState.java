@@ -7,8 +7,6 @@ public class MysteryState extends AttackState {
 
 	public MysteryState(IAstageStateV2 client, String file) {
 		super(client, file);
-		//probabilities = new Vector<Integer>();
-		//for(int i = 0; i < 4; ++i) probabilities.add(25);
 	}
 
 	
