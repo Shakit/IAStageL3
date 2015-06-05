@@ -1,5 +1,3 @@
-//import java.util.Vector;
-
 import structs.Key;
 
 
@@ -18,6 +16,6 @@ public class JumpState extends MovingState {
 	}
 	
 	public void printState() {
-		System.out.print("Jump Moving State");
+		System.out.print("Ju");
 	}
 }

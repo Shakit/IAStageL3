@@ -1,5 +1,3 @@
-//import java.util.Vector;
-
 import structs.Key;
 
 
@@ -19,6 +17,6 @@ public class KickState extends AttackState {
 	}
 	
 	public void printState() {
-		System.out.print("Kick Attack State");		
+		System.out.print("K");		
 	}
 }

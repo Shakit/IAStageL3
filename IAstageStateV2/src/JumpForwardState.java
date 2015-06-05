@@ -1,5 +1,3 @@
-//import java.util.Vector;
-
 import structs.FrameData;
 import structs.Key;
 
@@ -34,6 +32,6 @@ public class JumpForwardState extends MovingState {
 		nextState();
 	}
 	public void printState() {
-		System.out.print("Jump Forward Moving State");
+		System.out.print("JF");
 	}
 }

@@ -1,5 +1,3 @@
-//import java.util.Vector;
-
 import structs.Key;
 
 
@@ -17,6 +15,6 @@ public class StayState extends MovingState {
 	}
 	
 	public void printState() {
-		System.out.print("Stay Moving State");		
+		System.out.print("St");		
 	}
 }

@@ -1,5 +1,3 @@
-//import java.util.Vector;
-
 import structs.FrameData;
 import structs.Key;
 
@@ -34,6 +32,6 @@ public class JumpBackwardState extends MovingState {
 		nextState();
 	}
 	public void printState() {
-		System.out.print("Jump Backward Moving State");
+		System.out.print("JB");
 	}
 }

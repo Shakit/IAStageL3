@@ -1,6 +1,5 @@
-//import java.util.Vector;
-
 import structs.Key;
+
 
 
 public class MysteryState extends AttackState {
@@ -20,6 +19,6 @@ public class MysteryState extends AttackState {
 	}
 	
 	public void printState() {
-		System.out.print("Mystery Attack State");		
+		System.out.print("M");		
 	}
 }

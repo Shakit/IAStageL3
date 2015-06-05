@@ -1,10 +1,26 @@
 
+
+
 public abstract class AttackState extends State {
 
+	int distMin;
+	int distMax;
+	
 	public AttackState(IAstageStateV2 client, String file) {
 		super(client, file);
+		distMin = 0;
+		distMax = 500;
 	}
 
+	public int getDistMin() {
+		return distMin;
+	}
+	
+	public int getDistMax() {
+		return distMax;
+	}
+	
+	
 	public void doYourStuff() {
 		super.doYourStuff();
 	}

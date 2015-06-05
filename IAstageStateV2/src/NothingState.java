@@ -1,6 +1,5 @@
-//import java.util.Vector;
-
 import structs.Key;
+
 
 
 public class NothingState extends AttackState {
@@ -18,6 +17,6 @@ public class NothingState extends AttackState {
 	}
 	
 	public void printState() {
-		System.out.print("Nothing Attack State");		
+		System.out.print("N");		
 	}
 }

@@ -1,6 +1,5 @@
-//import java.util.Vector;
-
 import structs.Key;
+
 
 
 public class CrouchState extends MovingState {
@@ -21,7 +20,8 @@ public class CrouchState extends MovingState {
 			nbFrameCurr = nbFrameInit;
 		}
 	}
+	
 	public void printState() {
-		System.out.print("Crouch Moving State");		
+		System.out.print("Cr");		
 	}
 }

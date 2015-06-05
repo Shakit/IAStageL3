@@ -1,6 +1,5 @@
-//import java.util.Vector;
-
 import structs.Key;
+
 
 
 public class PunchState extends AttackState {
@@ -19,6 +18,6 @@ public class PunchState extends AttackState {
 	}
 	
 	public void printState() {
-		System.out.print("Punch Attack State");		
+		System.out.print("P");		
 	}
 }

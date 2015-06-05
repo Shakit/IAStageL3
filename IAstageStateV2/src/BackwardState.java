@@ -1,8 +1,7 @@
-//import java.util.Vector;
+
 
 import structs.FrameData;
 import structs.Key;
-
 
 public class BackwardState extends MovingState {
 
@@ -38,6 +37,6 @@ public class BackwardState extends MovingState {
 	}
 	
 	public void printState() {
-		System.out.print("Backward Moving State");
+		System.out.print("Bw");
 	}
 }
